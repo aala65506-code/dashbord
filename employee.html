@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>employee</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="min-wiper">
+         <nav>
+            <header class="header d-flex justify-content-between">
+                <div class="right d-flex align-items-center gap-3">
+                    <div class="logo d-none d-md-block">
+                        <a href="#">لوحة التحكم</a>
+                    </div>
+                    <a> <i class="fa-solid fa-chart-bar" id="sidbar-toog"></i></a>
+
+                    <form class=" d-none d-md-block">
+                        <input type="text" class="form-control" placeholder="ابحث">
+                    </form>
+                </div>
+
+
+                <div class="left d-flex  d-flex align-items-center gap-3 px-2">
+                    <div class="icon">
+                        <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
+                            aria-controls="offcanvasScrolling">
+                            <i class="fa-regular fa-message bell"></i>
+                        </a>
+
+
+                        <a href="#"><i class="fa-regular fa-heart" data-bs-toggle="modal"
+                                data-bs-target="#favoritesModal"></i></a>
+                        <a href="#profileModal" data-bs-toggle="modal"><i class="fa-regular fa-user"></i></a>
+
+                    </div>
+                    <div class="afatar">
+                        <img src="images/per1.jpg">
+                    </div>
+                    <i class="fa-solid fa-bars-staggered active" data-bs-toggle="offcanvas"
+                        href="#offcanvasExample"></i>
+
+
+                </div>
+            </header>
+        </nav>
+
+        <div class="sidepar" id="sidepar">
+            <div class="profile ">
+                <img width="80px" src="images/per1.jpg">
+                <h3>الاء الجندي </h3>
+            </div>
+            <ul class="ul-slider">
+                <li class="mb-2 active">
+                    <i class="fa-solid fa-house fs-4"></i>
+                    <a href="index.html">الرئيسية</a>
+
+                </li>
+                <li class="mb-2">
+                    <i class="	fa-solid fa-pills fs-4"></i>
+                    <a href="">المخزون (الادوية)</a>
+
+                </li>
+                <li class="mb-2">
+                    <i class="	fa-solid fa-cart-arrow-down fs-4"></i>
+                    <a href="">الطلبات </a>
+
+                </li>
+                <li class="mb-2">
+                    <i class="	fa-solid fa-shop fs-4"></i>
+                    <a href="">الصيدليات </a>
+
+                </li>
+                <li class="mb-2">
+                    <i class="	fa-solid fa-truck fs-4"></i>
+                    <a href="">الموردين </a>
+
+                </li>
+                <li class="mb-2">
+                    <i class="	fa-solid fa-users-gear fs-4"></i>
+                    <a href="">المستخدمين </a>
+
+                </li>
+                <li class="mb-2">
+                    <i class="fa-solid fa-id-badge fs-4"></i>
+                    <a href="employee.html">كافة الموظفين </a>
+
+                </li>
+                <li class="mb-2">
+                    <i class="	fa-solid fa-bell fs-4"></i>
+                    <a href=""> التنبيهات </a>
+
+                </li>
+                <li class="mb-2">
+                    <i class="	fa-solid fa-gear fs-4"></i>
+                    <a href=""> الاعدادات </a>
+
+                </li>
+                <li class="mb-2">
+                    <i class="	fa-solid fa-chart-line fs-4"></i>
+                    <a href="blog.html"> التقارير </a>
+
+                </li>
+                <li class="mb-2">
+                    <i class="	fa-solid fa-right-from-bracket fs-4"></i>
+                    <a href=""> تسجيل الخروج </a>
+
+                </li>
+
+
+
+
+
+            </ul>
+        </div>
+
+
+        <div class="content" id="content">
+            <div class="inner">
+                <div class="container-fluid">
+                    <h4>كافة الموظفين</h4>
+                    <div class="row">
+                        <div class="col">
+
+                            <button type="button" class="btn btn-primary mt-2 mb-3" data-bs-toggle="modal"
+                                data-bs-target="#add">
+                                اضافة موظف جديد
+                            </button>
+                            <div class="card p-2">
+                                <table class="table table-hover display" id="example">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">الرقم الفريد</th>
+
+                                            <th scope="col">الاسم الكامل</th>
+                                            <th scope="col">القسم</th>
+                                            <th scope="col">رقم الهاتف</th>
+                                            <th scope="col">تاريخ التعيين</th>
+
+                                            <th scope="col">الصورة</th>
+                                            <th scope="col">العمليات</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr>
+                                            <td>1</td>
+
+                                            <td>احمد العلي</td>
+                                            <td>مندوب</td>
+                                            <td>0945761800</td>
+                                            <td>23-3-2020</td>
+                                            <td><img src="images/per4.jpg" alt="صورة" class="employee-img"></td>
+                                            <td class="actions-column">
+                                                <div class="dropdown">
+                                                    <button class="btn dash btn-sm dropdown-toggle" type="button"
+                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                        العمليات
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="#">التفاصيل</a></li>
+                                                        <li><a class="dropdown-item"  data-bs-toggle="modal" href="#edait">تعديل</a></li>
+                                                        <li><a class="dropdown-item text-danger"  data-bs-toggle="modal" href="#delet">حذف</a></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+
+                                        <tr>
+                                            <td>2</td>
+
+                                            <td>لمى كوجان</td>
+                                            <td>مندوب</td>
+                                            <td>0945761800</td>
+                                            <td>23-3-2020</td>
+                                            <td><img src="images/per3.jpg" alt="صورة" class="employee-img"></td>
+                                            <td class="actions-column">
+                                                <div class="dropdown">
+                                                    <button class="btn  dash btn-sm dropdown-toggle" type="button"
+                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                        العمليات
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="#">التفاصيل</a></li>
+                                                        <li><a class="dropdown-item" href="#">تعديل</a></li>
+                                                        <li><a class="dropdown-item text-danger" href="#">حذف</a></li>
+                                                    </ul>
+                                                </div>
+                                        </tr>
+
+                                        <tr>
+                                            <td>3</td>
+                                            <td> مرح المحمد </td>
+                                            <td> محاسبة </td>
+
+                                            <td> 09489765 </td>
+                                            <td> 3-3-2019 </td>
+                                            <td><img src="images/per3.jpg" alt="صورة" class="employee-img"></td>
+                                            <td class="actions-column">
+                                                <div class="dropdown">
+                                                    <button class="btn dash btn-sm dropdown-toggle" type="button"
+                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                        العمليات
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="#">التفاصيل</a></li>
+                                                        <li><a class="dropdown-item" href="#">تعديل</a></li>
+                                                        <li><a class="dropdown-item text-danger" href="#">حذف</a></li>
+                                                    </ul>
+                                                </div>
+
+
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td> كامل الاحمد </td>
+                                            <td> معاون مدير </td>
+
+                                            <td> 0998760800 </td>
+                                            <td> 2-5-2021 </td>
+                                            <td><img src="images/per4.jpg" alt="صورة" class="employee-img"></td>
+                                            <td class="actions-column">
+                                                <div class="dropdown">
+                                                    <button class="btn dash btn-sm dropdown-toggle" type="button"
+                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                        العمليات
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="#">التفاصيل</a></li>
+                                                        <li><a class="dropdown-item" href="#">تعديل</a></li>
+                                                        <li><a class="dropdown-item text-danger" href="#">حذف</a></li>
+                                                    </ul>
+                                                </div>
+
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td> مالك النجار </td>
+                                            <td> امين مستودع </td>
+
+                                            <td> 0945723400 </td>
+                                            <td> 22-7-2019 </td>
+                                            <td><img src="images/per6.jpg" alt="صورة" class="employee-img"></td>
+                                            <td class="actions-column">
+                                                <div class="dropdown">
+                                                    <button class="btn dash btn-sm dropdown-toggle" type="button"
+                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                        العمليات
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="#">التفاصيل</a></li>
+                                                        <li><a class="dropdown-item" href="#">تعديل</a></li>
+                                                        <li><a class="dropdown-item text-danger" href="#">حذف</a></li>
+                                                    </ul>
+                                                </div>
+
+
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td> رامي الجندي </td>
+                                            <td> مسؤول جرد </td>
+
+                                            <td> 0998561801</td>
+                                            <td> 25-5-2025 </td>
+                                            <td><img src="images/111.jpg" alt="صورة" class="employee-img"></td>
+                                            <td class="actions-column">
+                                                <div class="dropdown">
+                                                    <button class="btn dash btn-sm dropdown-toggle" type="button"
+                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                        العمليات
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="#">التفاصيل</a></li>
+                                                        <li><a class="dropdown-item" href="#">تعديل</a></li>
+                                                        <li><a class="dropdown-item text-danger" href="#">حذف</a></li>
+                                                    </ul>
+                                                </div>
+
+
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td> كرم حلبي </td>
+                                            <td> ادخال بيانات </td>
+
+                                            <td> 0949461800 </td>
+                                            <td> 1-1-2024 </td>
+                                            <td><img src="images/per8.jpg" alt="صورة" class="employee-img"></td>
+                                            <td class="actions-column">
+                                                <div class="dropdown">
+                                                    <button class="btn dash btn-sm dropdown-toggle" type="button"
+                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                        العمليات
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="#">التفاصيل</a></li>
+                                                        <li><a class="dropdown-item" href="#">تعديل</a></li>
+                                                        <li><a class="dropdown-item text-danger" href="#">حذف</a></li>
+                                                    </ul>
+                                                </div>
+
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td> لين الامير </td>
+                                            <td> مسؤولة جرد </td>
+
+                                            <td> 0945761800 </td>
+                                            <td> 23-3-2020 </td>
+                                            <td><img src="images/per7.jpg" alt="صورة" class="employee-img"></td>
+                                            <td class="actions-column">
+                                                <div class="dropdown">
+                                                    <button class="btn dash btn-sm dropdown-toggle" type="button"
+                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                        العمليات
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="#">التفاصيل</a></li>
+                                                        <li><a class="dropdown-item" href="#">تعديل</a></li>
+                                                        <li><a class="dropdown-item text-danger" href="#">حذف</a></li>
+                                                    </ul>
+                                                </div>
+
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
+                                            <td> باسل الملك </td>
+                                            <td> مندوب </td>
+
+                                            <td> 0945721811 </td>
+                                            <td> 3-3-2022 </td>
+                                            <td><img src="images/135.jpg" alt="صورة" class="employee-img"></td>
+                                            <td class="actions-column">
+                                                <div class="dropdown">
+                                                    <button class="btn dash btn-sm dropdown-toggle" type="button"
+                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                        العمليات
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="#">التفاصيل</a></li>
+                                                        <li><a class="dropdown-item" href="#">تعديل</a></li>
+                                                        <li><a class="dropdown-item text-danger" href="#">حذف</a></li>
+                                                    </ul>
+                                                </div>
+
+                                        </tr>
+                                        </tr>
+                                        <tr>
+                                            <td>10</td>
+                                            <td> نور الزعبي </td>
+                                            <td> ةمندوب </td>
+
+                                            <td> 0909721811 </td>
+                                            <td> 30-9-2022 </td>
+                                            <td><img src="images/per5.jpg" alt="صورة" class="employee-img"></td>
+                                            <td class="actions-column">
+                                                <div class="dropdown">
+                                                    <button class="btn dash btn-sm dropdown-toggle" type="button"
+                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                        العمليات
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="#">التفاصيل</a></li>
+                                                        <li><a class="dropdown-item" href="#">تعديل</a></li>
+                                                        <li><a class="dropdown-item text-danger" href="#">حذف</a></li>
+                                                    </ul>
+                                                </div>
+
+
+                                        </tr>
+                                        </tr>
+                                        <tr>
+                                            <td>11</td>
+                                            <td> يوسف القاسم </td>
+                                            <td> مراقب </td>
+
+                                            <td> 0945721811 </td>
+                                            <td> 3-3-2022 </td>
+                                            <td><img src="images/per6.jpg" alt="صورة" class="employee-img"></td>
+                                            <td class="actions-column">
+                                                <div class="dropdown">
+                                                    <button class="btn  dash btn-sm dropdown-toggle" type="button"
+                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                        العمليات
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="#">التفاصيل</a></li>
+                                                        <li><a class="dropdown-item" href="#">تعديل</a></li>
+                                                        <li><a class="dropdown-item text-danger" href="#">حذف</a></li>
+                                                    </ul>
+                                                </div>
+
+                                        </tr>
+                                        </tr>
+                                        <tr>
+                                            <td>12</td>
+                                            <td> جاد العبد الله </td>
+                                            <td> امين مستودع </td>
+
+                                            <td> 0945721811 </td>
+                                            <td>13-7-2022 </td>
+                                            <td><img src="images/111.jpg" alt="صورة" class="employee-img"></td>
+                                            <td class="actions-column">
+                                                <div class="dropdown">
+                                                    <button class="btn  dash btn-sm dropdown-toggle" type="button"
+                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                        العمليات
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="#">التفاصيل</a></li>
+                                                        <li><a class="dropdown-item" href="#">تعديل</a></li>
+                                                        <li><a class="dropdown-item text-danger" href="#">حذف</a></li>
+                                                    </ul>
+                                                </div>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--اضافة موظف -->
+
+
+        <div class="modal fade" id="add" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">اضافة موظف جديد</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body ">
+
+                        <form>
+                            <div class="row">
+                                <div class="mb-3 col">
+                                    <label class="form-label">الاسم الكامل </label>
+                                    <input type="text" class="form-control" placeholder="ادخل الاسم الكامل ">
+
+                                </div>
+                                <div class="mb-3 col">
+                                    <label class="form-label"> القسم </label>
+                                    <input type="text" class="form-control" placeholder="ادخل القسم">
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="mb-3 col">
+                                    <label class="form-label"> رقم الهاتف </label>
+                                    <input type="tel" class="form-control" placeholder=" ادخل رقم الهاتف ">
+                                </div>
+                                <div class="mb-3 col">
+                                    <label class="form-label"> تاريخ التعيين </label>
+                                    <input type="date" class="form-control" placeholder="ادخل تارييخ التعيين ">
+
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">صورة الموظف</label>
+                                <input class="form-control" type="file" id="formFile">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary dash " data-bs-dismiss="modal">اغلاق</button>
+                        <button type="button" class="btn btn-primary dash">اضافة </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--نهاية-->
+        <!--تعديل موظف -->
+
+        <div class="modal fade" id="edait" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel"> تعديل بيانات الموظف </h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body ">
+
+                        <form>
+                            <div class="row">
+                                <div class="mb-3 col">
+                                    <label class="form-label">الاسم الكامل </label>
+                                    <input type="text" class="form-control" placeholder="ادخل الاسم الكامل " value="احمد العلي">
+
+                                </div>
+                                <div class="mb-3 col">
+                                    <label class="form-label"> القسم </label>
+                                    <input type="text" class="form-control" placeholder="ادخل القسم" value="مندوب">
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="mb-3 col">
+                                    <label class="form-label"> رقم الهاتف </label>
+                                    <input type="tel" class="form-control" placeholder=" ادخل رقم الهاتف " value="	0945761800">
+
+
+                                </div>
+                                <div class="mb-3 col">
+                                    <label class="form-label"> تاريخ التعيين </label>
+                                    <input type="date" class="form-control" placeholder="ادخل تارييخ التعيين " value="	23-3-2020">
+
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">صورة الموظف</label>
+                                <input class="form-control" type="file" id="formFile">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary dash " data-bs-dismiss="modal">اغلاق</button>
+                        <button type="button" class="btn btn-primary dash">تعديل </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--نهاية -->
+        <!--حذف موظف  -->
+      <div class="modal fade" id="delet" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog ">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel"> حذف بيانات الموظف </h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body ">
+
+                       <div class="alert alert-danger" role="alert">
+  تم حذف الموظف بنجاح
+</div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+ <!--النشاط-->
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">الصيدليات المتصلة</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="actimuni ">
+                    <div class="actimg position-relative">
+                        <div class="spinner-grow text-success spinner-sm ruser" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <img width="50px" src="images/far2 (1).jpg">
+                        <h5>صيدلية الياسمين</h5>
+                    </div>
+                    <div class="sochial">
+
+
+                        <i class="fa-brands fa-square-whatsapp wa"></i>
+                        <i class="fa-brands fa-facebook-messenger ma"></i>
+                    </div>
+                </div>
+                <div class="actimuni mt-2 ">
+                    <div class="actimg position-relative">
+                        <div class="spinner-grow text-success spinner-sm ruser" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <img width="50px" src="images/far2 (2).jpg">
+                        <h5>صيدلية القدس</h5>
+                    </div>
+                    <div class="sochial">
+
+
+                        <i class="fa-brands fa-square-whatsapp wa"></i>
+                        <i class="fa-brands fa-facebook-messenger ma"></i>
+                    </div>
+                </div>
+                <div class="actimuni mt-2 ">
+                    <div class="actimg position-relative">
+                        <div class="spinner-grow text-success spinner-sm ruser" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <img width="50px" src="images/far3.jpg">
+                        <h5>صيدلية فارما</h5>
+                    </div>
+                    <div class="sochial">
+
+
+                        <i class="fa-brands fa-square-whatsapp wa"></i>
+                        <i class="fa-brands fa-facebook-messenger ma"></i>
+                    </div>
+                </div>
+                <div class="actimuni mt-2 ">
+                    <div class="actimg position-relative">
+                        <div class="spinner-grow text-success spinner-sm ruser" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <img width="50px" src="images/far4.jpg">
+
+                        <h5>صيدلية سيتامول</h5>
+                    </div>
+                    <div class="sochial">
+
+
+                        <i class="fa-brands fa-square-whatsapp wa"></i>
+                        <i class="fa-brands fa-facebook-messenger ma"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+<!-- مودال البروفايل -->
+
+
+
+
+
+<!-- مودال البروفايل -->
+<div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="profileModalLabel">الملف الشخصي</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+      </div>
+
+      <div class="modal-body text-center">
+        <img src="images/per1.jpg" class="rounded-circle mb-3" width="100" height="100" alt="Profile Picture">
+        <h5> الاء الجندي </h5>
+        <p class="text-muted">alaa@gmail.com</p>
+        
+        <div class="mt-3">
+          <p><strong>الهاتف:</strong> 09874536</p>
+          <p><strong>الدور:</strong> ادمن</p>
+        </div>
+      </div>
+
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+        
+        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#edaitpro">تعديل</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+        <div class="modal fade" id="edaitpro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel"> تعديل بيانات البروفايل </h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body ">
+
+                        <form>
+                            <div class="row">
+                                <div class="mb-3 col">
+                                    <label class="form-label">الاسم الكامل </label>
+                                    <input type="text" class="form-control" placeholder="ادخل الاسم الكامل ">
+
+                                </div>
+                                <div class="mb-3 col">
+                                    <label class="form-label"> الايميل </label>
+                                    <input type="email" class="form-control" placeholder="ادخل الايميل">
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="mb-3 col">
+                                    <label class="form-label"> رقم الهاتف </label>
+                                    <input type="tel" class="form-control" placeholder=" ادخل رقم الهاتف ">
+
+
+                                </div>
+                                <div class="mb-3 col">
+                                    <label class="form-label">  الدور  </label>
+                                    <input type="text" class="form-control" placeholder="ادخل الدور  ">
+
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">صورة البروفايل</label>
+                                <input class="form-control" type="file" id="formFile">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary dash " data-bs-dismiss="modal">اغلاق</button>
+                        <button type="button" class="btn btn-primary dash">تعديل </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+  <!--الاشعارات-->
+
+
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+            id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasScrollingLabel">التنبيهات</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <h6 class="mt-3">🔔 التنبيهات</h6>
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-warning mb-2">دواء "Panadol" على وشك النفاد.</li>
+                    <li class="list-group-item list-group-item-danger mb-2">صلاحية "Aspirin" تنتهي خلال 7 أيام.</li>
+                    <li class="list-group-item list-group-item-info mb-2">طلب جديد من صيدلية الأمل.</li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+        <!--المفضلة-->
+
+        <!-- Modal لعرض الأدوية المفضلة -->
+        <div class="modal fade" id="favoritesModal" tabindex="-1" aria-labelledby="favoritesModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="favoritesModalLabel">📦 الأدوية المفضلة</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+                    </div>
+                    <div class="modal-body">
+                        <ul class="list-group">
+                            <li class="list-group-item zz">💊 باراسيتامول 500mg</li>
+                            <li class="list-group-item zz">💊 أوغمنتين 1g</li>
+                            <li class="list-group-item zz">💊 بروفين 400mg</li>
+                            <!-- ضيفي أو عدّلي حسب الحاجة -->
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <script src="js/datatables.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <script src="js/chars.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/script.js"></script>
+
+</body>
+
+</html>
